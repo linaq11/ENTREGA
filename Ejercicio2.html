@@ -110,7 +110,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>httpgd::hgd(host = “0.0.0.0”, port = 8787, token = FALSE) httpgd::hgd_details() plot(1:10)</p>
+<section id="r" class="level1">
+<h1>r</h1>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ejercicio 1: Rutas de monitoreo</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -182,6 +183,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>[1] "Manglar"     "Bosque Seco" "Coral"      </code></pre>
 </div>
 </div>
+<section id="python" class="level2">
+<h2 class="anchored" data-anchor-id="python">python</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># rutas_pnn.py</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Ejercicio 1: Rutas de monitoreo (Tuplas y Listas)</span></span>
@@ -251,13 +254,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Observaciones únicas:"</span>, observaciones_unicas)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Observaciones únicas: {'Manglar', 'Matorral', 'Coral', 'Bosque Seco'}</code></pre>
+<pre><code>Observaciones únicas: {'Coral', 'Bosque Seco', 'Matorral', 'Manglar'}</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Ecosistemas oficiales avistados hoy:"</span>, ecosistemas_avistados_hoy)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Ecosistemas oficiales avistados hoy: {'Manglar', 'Coral', 'Bosque Seco'}</code></pre>
+<pre><code>Ecosistemas oficiales avistados hoy: {'Coral', 'Bosque Seco', 'Manglar'}</code></pre>
 </div>
 </div>
+</section>
 <section id="ejercicio-1" class="level2">
 <h2 class="anchored" data-anchor-id="ejercicio-1">Ejercicio 1</h2>
 <p>En términos de seguridad del código, guardar cada punto como un objeto separado evita que se modifique accidentalmente por operaciones sobre la ruta completa. La ruta se mantiene como lista mutable para poder crecer con nuevos reportes. Si se intentara “cambiar” el valor de un punto, en R se podría reasignar el vector, pero la buena práctica es tratar los puntos como registros inmutables y crear uno nuevo, no editarlo en sitio.</p>
@@ -271,6 +275,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>En Python, ruta[1:3] devuelve 2 elementos porque el límite superior es exclusivo. En R, ruta[1:3] devuelve 3 elementos porque el rango 1:3 incluye ambos extremos.</p>
 <p>Python (ruta[1:3]): el extremo derecho no se incluye (intervalo semiabierto). Devuelve elementos con índices 1 y 2 → 2 elementos. Motivo: la convención de slicing en Python es [inicio, fin).</p>
 <p>R (ruta[1:3]) y Julia (ruta[1:3]): el rango sí incluye ambos extremos. Devuelve índices 1, 2 y 3 → 3 elementos. Motivo: en R y Julia, 1:3 construye un vector/rango inclusivo.</p>
+</section>
 </section>
 
 </main>

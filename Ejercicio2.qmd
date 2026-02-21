@@ -36,9 +36,7 @@ execute:
   message: false
 ---
 
-httpgd::hgd(host = "0.0.0.0", port = 8787, token = FALSE)
-httpgd::hgd_details()
-plot(1:10)
+# r
 
 ```{r}
 
@@ -100,6 +98,7 @@ print(ecosistemas_avistados_hoy)
 
 ```
 
+## python
 
 ```{python}
 # rutas_pnn.py
