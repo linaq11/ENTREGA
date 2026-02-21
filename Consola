@@ -1,0 +1,166 @@
+ARGUMENT 'estándar' __ignored__
+
+ARGUMENT 'para' __ignored__
+
+ARGUMENT 'procesos' __ignored__
+
+ARGUMENT 'geoespaciales' __ignored__
+
+ARGUMENT 'con' __ignored__
+
+ARGUMENT 'sf' __ignored__
+
+ARGUMENT 'o' __ignored__
+
+ARGUMENT 'terra.' __ignored__
+
+
+R version 4.3.3 (2024-02-29) -- "Angel Food Cake"
+Copyright (C) 2024 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[?2004h> 
+[?2004l[K[?2004h> 
+[?2004l[K[?2004h> [K> [K> [K> [K> 
+[?2004l[K[?2004h> # Ejercicio 2: Metadatos y Ecosistemas (R)
+[?2004l[?2004h> 
+[?2004l[K[?2004h> pnn_tayrona <- list(
+[?2004l[?2004h+   nombre = "PNN Tayrona",
+[?2004l[?2004h+   area_hectareas = 15000,
+[?2004l[?2004h+   abierto_turismo = TRUE,
+[?2004l[?2004h+   ecosistemas = c("Manglar", "Bosque Seco", "Coral")
+[?2004l[?2004h+ )
+[?2004l[?2004h> 
+[?2004l[K[?2004h> # Acceso seguro a "fecha_creacion"
+[?2004l[?2004h> fecha_creacion <- if ("fecha_creacion" %in% names(pnn_tayrona)) {
+[?2004l[?2004h+   pnn_tayrona$fecha_creacion
+[?2004l[?2004h+ } else {
+[?2004l[?2004h+   "Dato no disponible"
+[?2004l[?2004h+ }
+[?2004l[?2004h> print(fecha_creacion)
+[?2004l[1] "Dato no disponible"
+[?2004h> 
+[?2004l[K[?2004h> # Agregar nueva clave
+[?2004l[?2004h> pnn_tayrona$departamento <- "Magdalena"
+[?2004l[?2004h> 
+[?2004l[K[?2004h> # Quitar duplicados
+[?2004l[?2004h> observaciones_crudas <- c("Manglar", "Coral", "Bosque Seco", "Manglar", "Coral", "Matorral")
+[?2004l[?2004h> observaciones_unicas <- unique(observaciones_crudas)
+[?2004l[?2004h> 
+[?2004l[K[?2004h> # Intersección con ecosistemas oficiales
+[?2004l[?2004h> ecosistemas_avistados_hoy <- intersect(pnn_tayrona$ecosistemas, observaciones_unicas)
+[?2004l[?2004h> 
+[?2004l[K[?2004h> print(observaciones_unicas)
+[?2004l[1] "Manglar"     "Coral"       "Bosque Seco" "Matorral"   
+[?2004h> print(ecosistemas_avistados_hoy)
+[?2004l[1] "Manglar"     "Bosque Seco" "Coral"      
+[?2004h> # Ejercicio 2: Metadatos y Ecosistemas (R)
+[?2004l[?2004h> 
+[?2004l[K[?2004h> pnn_tayrona <- list(
+[?2004l[?2004h+   nombre = "PNN Tayrona",
+[?2004l[?2004h+   area_hectareas = 15000,
+[?2004l[?2004h+   abierto_turismo = TRUE,
+[?2004l[?2004h+   ecosistemas = c("Manglar", "Bosque Seco", "Coral")
+[?2004l[?2004h+ )
+[?2004l[?2004h> 
+[?2004l[K[?2004h> # Acceso seguro a "fecha_creacion"
+[?2004l[?2004h> fecha_creacion <- if ("fecha_creacion" %in% names(pnn_tayrona)) {
+[?2004l[?2004h+   pnn_tayrona$fecha_creacion
+[?2004l[?2004h+ } else {
+[?2004l[?2004h+   "Dato no disponible"
+[?2004l[?2004h+ }
+[?2004l[?2004h> print(fecha_creacion)
+[?2004l[1] "Dato no disponible"
+[?2004h> 
+[?2004l[K[?2004h> # Agregar nueva clave
+[?2004l[?2004h> pnn_tayrona$departamento <- "Magdalena"
+[?2004l[?2004h> 
+[?2004l[K[?2004h> # Quitar duplicados
+[?2004l[?2004h> observaciones_crudas <- c("Manglar", "Coral", "Bosque Seco", "Manglar", "Coral", "Matorral")
+[?2004l[?2004h> observaciones_unicas <- unique(observaciones_crudas)
+[?2004l[?2004h> 
+[?2004l[K[?2004h> # Intersección con ecosistemas oficiales
+[?2004l[?2004h> ecosistemas_avistados_hoy <- intersect(pnn_tayrona$ecosistemas, observaciones_unicas)
+[?2004l[?2004h> 
+[?2004l[K[?2004h> print(observaciones_unicas)
+[?2004l[1] "Manglar"     "Coral"       "Bosque Seco" "Matorral"   
+[?2004h> print(ecosistemas_avistados_hoy)
+[?2004l[1] "Manglar"     "Bosque Seco" "Coral"      
+[?2004h> # Ejercicio 1: Rutas de monitoreo
+[?2004l[?2004h> 
+[?2004l[K[?2004h> punto_1 <- c(11.1198, -74.0321)
+[?2004l[?2004h> punto_2 <- c(11.1250, -74.0280)
+[?2004l[?2004h> punto_3 <- c(11.1302, -74.0215)
+[?2004l[?2004h> 
+[?2004l[K[?2004h> ruta_avistamiento <- list(punto_1, punto_2, punto_3)
+[?2004l[?2004h> 
+[?2004l[K[?2004h> punto_4 <- c(11.1355, -74.0150)
+[?2004l[?2004h> ruta_avistamiento <- append(ruta_avistamiento, list(punto_4))
+[?2004l[?2004h> 
+[?2004l[K[?2004h> ultimo_reporte <- ruta_avistamiento[[length(ruta_avistamiento)]]
+[?2004l[?2004h> 
+[?2004l[K[?2004h> elevaciones <- c(850.5, 920.0, 1050.2, 1180.8)
+[?2004l[?2004h> 
+[?2004l[K[?2004h> elevacion_maxima <- max(elevaciones)
+[?2004l[?2004h> total_puntos <- length(ruta_avistamiento)
+[?2004l[?2004h> 
+[?2004l[K[?2004h> cat("Elevación máxima:", elevacion_maxima, "m\n")
+[?2004lElevación máxima: 1180.8 m
+[?2004h> cat("Total de puntos (vértices):", total_puntos, "\n")
+[?2004lTotal de puntos (vértices): 4 
+[?2004h> cat("Último reporte (Lat, Lon):", ultimo_reporte[1], ultimo_reporte[2], "\n")
+[?2004lÚltimo reporte (Lat, Lon): 11.1355 -74.015 
+[?2004h> 
+[?2004l[K[?2004h> [K> [K> [K> [K> [K> 
+[?2004l[K[?2004h> # Ejercicio 2: Metadatos y Ecosistemas (R)
+[?2004l[?2004h> 
+[?2004l[K[?2004h> pnn_tayrona <- list(
+[?2004l[?2004h+   nombre = "PNN Tayrona",
+[?2004l[?2004h+   area_hectareas = 15000,
+[?2004l[?2004h+   abierto_turismo = TRUE,
+[?2004l[?2004h+   ecosistemas = c("Manglar", "Bosque Seco", "Coral")
+[?2004l[?2004h+ )
+[?2004l[?2004h> 
+[?2004l[K[?2004h> # Acceso seguro a "fecha_creacion"
+[?2004l[?2004h> fecha_creacion <- if ("fecha_creacion" %in% names(pnn_tayrona)) {
+[?2004l[?2004h+   pnn_tayrona$fecha_creacion
+[?2004l[?2004h+ } else {
+[?2004l[?2004h+   "Dato no disponible"
+[?2004l[?2004h+ }
+[?2004l[?2004h> print(fecha_creacion)
+[?2004l[1] "Dato no disponible"
+[?2004h> 
+[?2004l[K[?2004h> # Agregar nueva clave
+[?2004l[?2004h> pnn_tayrona$departamento <- "Magdalena"
+[?2004l[?2004h> 
+[?2004l[K[?2004h> # Quitar duplicados
+[?2004l[?2004h> observaciones_crudas <- c("Manglar", "Coral", "Bosque Seco", "Manglar", "Coral", "Matorral")
+[?2004l[?2004h> observaciones_unicas <- unique(observaciones_crudas)
+[?2004l[?2004h> 
+[?2004l[K[?2004h> # Intersección con ecosistemas oficiales
+[?2004l[?2004h> ecosistemas_avistados_hoy <- intersect(pnn_tayrona$ecosistemas, observaciones_unicas)
+[?2004l[?2004h> 
+[?2004l[K[?2004h> print(observaciones_unicas)
+[?2004l[1] "Manglar"     "Coral"       "Bosque Seco" "Matorral"   
+[?2004h> print(ecosistemas_avistados_hoy)
+[?2004l[1] "Manglar"     "Bosque Seco" "Coral"      
+[?2004h> 
+[?2004l[K[?2004h> quarto render ejercicios_rutas_metadatos.qmd --to html
+[?2004l[?2004h> quarto render ejercicios_rutas_metadatos.qmd --to pdf
+[?2004l[?2004h> 
+[?2004l[?2004h> 
+[?2004l[K[?2004h> [K> [K> [K> [K> [K> 
