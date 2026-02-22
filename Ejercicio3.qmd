@@ -1,0 +1,41 @@
+---
+title: "Limpieza de Topónimos y Parseo de Coordenadas y WKT (julia)"
+author: "Lina María Quintero Fonseca"
+date: today
+lang: es
+
+format:
+  pdf:
+    mainfont: "Latin Modern Roman"
+    monofont: "Latin Modern Mono"
+    pdf-engine: xelatex
+    fontsize: 11pt
+    linestretch: 1.15
+    geometry: margin=1in
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    colorlinks: true
+    urlcolor: blue
+    linkcolor: blue
+    citecolor: blue
+    keep-tex: false
+    include-in-header:
+      text: |
+        \usepackage{fancyhdr}
+        \pagestyle{fancy}
+        \fancyhf{}
+        \lhead{Programación SIG}
+        \rhead{Ejercicio 1}
+        \cfoot{\thepage}
+        \setlength{\parindent}{0pt}
+        \setlength{\parskip}{6pt}
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+j_eval(r"-(
+
+
